@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+@import "../node_modules/bootstrap/scss/functions";
+
+$font-family-base: 'Courier New', Courier, monospace;
+$body-color: #00ff41;
+$carousel-caption-color: #00ff41;
+$carousel-control-color: rgb(118, 172, 118);
+$carousel-indicator-active-bg: rgb(118, 172, 118);
+$a-tags: 'a, a:active, a:visited';
+$a-tags-hover: 'a:hover';
+$link-color: #00ff41;
+
+.carousel{
+    // height: 100%;
+    .carousel-caption {
+      #{$a-tags} {
+        color: greenyellow;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      #{$a-tags-hover} {
+          color: rgb(129, 240, 129);
+          text-decoration: underline;
+        }
+    }
+}
+
+
+.wrapper {
+      .line {
+          position: relative;
+          border-right: 4px solid #00ff41;
+          width: 300px;
+          white-space: nowrap;
+          overflow: hidden;
+      }
+
+      .typing {
+              animation: blinkCursor 0.9s steps(12) infinite normal;
+      }
+}
+
+
+// @keyframes typewriter {
+//   from {
+//       width: 0;
+//   }
+
+//   to {
+//       width:300px;
+//   }
+// }
+
+@keyframes blinkCursor {
+  from {
+      border-right-color: rgba(0, 255, 64, 0.068);
+  }
+
+  to {
+      border-right-color: rgba(0, 255, 64, 1);
+  }
+}
+
+@mixin scrollbar($size, $foreground-color, $background-color: mix($foreground-color, darkgreen, 50%)) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width:  $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+body {
+  @include scrollbar(.4em, #00ff409a, black);
+}
+
+// $custom-theme-colors: (
+//     $green: #00ff41,
+// );
+
+// $theme-colors: map-merge($theme-colors, $custom-theme-colors);
+
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/bootstrap.scss"
